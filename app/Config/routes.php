@@ -35,14 +35,31 @@
 	Router::mapResources('TodoServices');
 	Router::parseExtensions('json');
 	
-	Router::resourceMap(array(
+	/* Router::resourceMap(array(
 		array('action' => 'index', 'method' => 'GET', 'id' => false),
 		array('action' => 'view', 'method' => 'GET', 'id' => true),
 		array('action' => 'add', 'method' => 'POST', 'id' => false),
 		array('action' => 'edit', 'method' => 'PUT', 'id' => true),
 		array('action' => 'delete', 'method' => 'DELETE', 'id' => true),
 		array('action' => 'update', 'method' => 'POST', 'id' => true)
-	));
+	)); */
+	
+	Router::connect(
+		"/:controller",
+		array("action" => "add", "[method]" => "POST")
+	);
+	
+	Router::connect(
+		"/:controller/:id",
+		array("action" => "edit", "[method]" => "PUT"),
+		array("id" => "[0-9]+")
+	);
+	
+	Router::connect(
+		"/:controller/:id",
+		array("action" => "delete", "[method]" => "DELETE"),
+		array("id" => "[0-9]+")
+	);
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

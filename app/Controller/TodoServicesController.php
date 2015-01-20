@@ -36,6 +36,10 @@ class TodoServicesController extends AppController {
 		$pdo->setAttribute ( PDO::ATTR_EMULATE_PREPARES, false );
 		
 		$todos = $this->Todo->find ( 'all' );
+		foreach ( $todos as &$todo ) {
+			unset ( $todo ['Todo'] ['created'] );
+			unset ( $todo ['Todo'] ['modified'] );
+		}
 		$this->set ( array (
 				'todos' => $todos,
 				'_serialize' => array (
@@ -51,6 +55,8 @@ class TodoServicesController extends AppController {
 	 */
 	public function add() {
 		$this->Todo->create ();
+		$data = $this->request->data;
+		
 		if ($this->Todo->save ( $this->request->data )) {
 			$message = 'Saved';
 		} else {
