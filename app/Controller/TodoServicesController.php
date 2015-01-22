@@ -22,7 +22,7 @@ class TodoServicesController extends AppController {
 		parent::beforeFilter ();
 		
 		if (! $this->request->is ( 'ajax' ))
-			throw new BadRequestException ( 'Ajax以外でのアクセスは許可されていません。' );
+			throw new BadRequestException ( 'Ajax is not avaiable!' );
 		$this->response->header ( 'X-Content-Type-Options', 'nosniff' );
 	}
 	
