@@ -32,8 +32,17 @@
 /**
  * Map resources todos via Restful
  */
-	Router::mapResources('TodoServices');
+
+/*
+ * API
+ */
+	Router::mapResources(array (
+		'todo_lists',
+	));
 	Router::parseExtensions('json');
+
+	// Router::mapResources('TodoServices');
+	// Router::parseExtensions('json');
 	
 	/* Router::resourceMap(array(
 		array('action' => 'index', 'method' => 'GET', 'id' => false),
@@ -44,22 +53,22 @@
 		array('action' => 'update', 'method' => 'POST', 'id' => true)
 	)); */
 	
-	Router::connect(
-		"/:controller",
-		array("action" => "add", "[method]" => "POST")
-	);
+	// Router::connect(
+	// 	"/:controller",
+	// 	array("action" => "add", "[method]" => "POST")
+	// );
 	
-	Router::connect(
-		"/:controller/:id",
-		array("action" => "edit", "[method]" => "PUT"),
-		array("id" => "[0-9]+")
-	);
+	// Router::connect(
+	// 	"/:controller/:id",
+	// 	array("action" => "edit", "[method]" => "PUT"),
+	// 	array("id" => "[0-9]+")
+	// );
 	
-	Router::connect(
-		"/:controller/:id",
-		array("action" => "delete", "[method]" => "DELETE"),
-		array("id" => "[0-9]+")
-	);
+	// Router::connect(
+	// 	"/:controller/:id",
+	// 	array("action" => "delete", "[method]" => "DELETE"),
+	// 	array("id" => "[0-9]+")
+	// );
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
