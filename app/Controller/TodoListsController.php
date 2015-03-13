@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
 class TodoListsController extends AppController {
 
 	public $components = array(
-        'DebugKit.Toolbar',
+        // 'DebugKit.Toolbar',
         'RequestHandler'
     );
 
