@@ -13,13 +13,15 @@ var app = app || {};
 
 		todoLists : function() {
 			//Todo一覧表示用ビューにルーティング
-			this.removeCurrentView();
-			this.nextView(app.TodoCollectionView);
+			// this.removeCurrentView();
+			// this.nextView(app.TodoCollectionView);
+			alert('todoLists');
 		},
 
 		todoDetail : function(id) {
-			this.removeCurrentView();
-			this.nextView(app.TodoDetailView, id);
+			alert('todoDetail: ' + id);
+			// this.removeCurrentView();
+			// this.nextView(app.TodoDetailView, id);
 		},
 
 		nextView : function(View, option) {
