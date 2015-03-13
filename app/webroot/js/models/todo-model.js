@@ -3,7 +3,7 @@ var app = app || {};
 //Todoデータ１件を表すモデル
 (function(app) {
 	app.TodoModel = Backbone.Model.extend({
-		urlRoot : '/rest-study/todo_lists',
+		urlRoot : '/awslearn/todo_lists',
 		parse : function(response) {
 			//モデルをパース
 			console.log("モデルをパース");
