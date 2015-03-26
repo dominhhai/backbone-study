@@ -6,7 +6,7 @@ var app = app || {};
 	// Backbone.history.start();
 
 	app.Application = Backbone.Marionette.Application.extend({
-		
+
 		initialize : function(){
 			new app.TodoRouter();
         },
@@ -14,6 +14,10 @@ var app = app || {};
         onStart : function(){
         	Backbone.history.start();
         },
+
+        regions: {
+        	mainRegion: '#main'
+        }
     });
 
 })(app);
