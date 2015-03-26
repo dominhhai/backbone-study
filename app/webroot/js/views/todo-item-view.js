@@ -12,7 +12,7 @@ var app = app || {};
 		ui : {
 			checkBox : '.toggle',
 			removeLink : '.remove-link'
-		}
+		},
 
 		//DOMイベントハンドラ設定
 		events : {
